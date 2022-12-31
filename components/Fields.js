@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Fields() {
   return (
-    <div className='w-full'>
+    <div className='lg:pl-28 w-full'>
     <p className='uppercase text-xl pb-2 pl-3 font-bold tracking-widest text-[#5651e5]'>
                 our range
     </p>
