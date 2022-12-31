@@ -15,7 +15,7 @@ import { InputBase } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-export default function ({title , children}) {
+export default function Layout({title , children}) {
 
     const router = useRouter();
 

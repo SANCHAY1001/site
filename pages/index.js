@@ -1,4 +1,4 @@
-import Head from 'next/head'
+
 import db from '../utils/db'
 import About from '../components/About'
 import Product from '../models/Product'

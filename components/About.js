@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import Link from 'next/link';
+
 import React from 'react'
 
 export default function About() {
@@ -31,5 +30,5 @@ export default function About() {
             </div> */}
           </div>
         </div>
-      );
-};
+      )
+}

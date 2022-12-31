@@ -21,7 +21,6 @@ export default function About() {
                 and to explore the role of poor and down trodden community in social and human
                 well-being. 
               </p>
-
             </div>
           </div>
         </div>

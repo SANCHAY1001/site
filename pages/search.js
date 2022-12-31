@@ -8,7 +8,6 @@ import {
     Select,
     Typography,
   } from '@mui/material';
-  import { Rating } from '@mui/material';
   import {GiCancel} from 'react-icons/gi'
   import { useRouter } from 'next/router';
   import React, { useContext } from 'react';
@@ -37,7 +36,6 @@ import {
     },
   ];
   
-  const ratings = [1, 2, 3, 4, 5];
   
   export default function Search(props) {
     const router = useRouter();
@@ -46,7 +44,6 @@ import {
       category = 'all',
       brand = 'all',
       price = 'all',
-      rating = 'all',
       sort = 'featured',
     } = router.query;
     const { products, countProducts, categories, brands, pages } = props;
@@ -93,9 +90,6 @@ import {
     };
     const priceHandler = (e) => {
       filterSearch({ price: e.target.value });
-    };
-    const ratingHandler = (e) => {
-      filterSearch({ rating: e.target.value });
     };
   
     const { state, dispatch } = useContext(Store);
