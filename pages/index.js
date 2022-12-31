@@ -1,4 +1,4 @@
-
+import Fields from '../components/Fields.js'
 import db from '../utils/db'
 import About from '../components/About'
 import Product from '../models/Product'
@@ -36,6 +36,7 @@ export default function Home({products}) {
               <ProductItem product={product} key={product.slug} addToCartHandler = {addToCartHandler}></ProductItem>
             ))} 
           </div>  
+          <Fields/>
           <About />
           <div className='grid max-w-[1240px] m-auto grid-cols-1  gap-4 md:grid-cols-3 lg:grid-cols-4'>
             {products.slice(1,2).map((product) => (
@@ -44,7 +45,7 @@ export default function Home({products}) {
           </div>
           <Vision />
           <div className='grid max-w-[1240px] m-auto grid-cols-1  gap-4 md:grid-cols-3 lg:grid-cols-4'>
-            {products.slice(2,4).map((product) => (
+            {products.slice(1,2).map((product) => (
               <ProductItem product={product} key={product.slug} addToCartHandler = {addToCartHandler}></ProductItem>
             ))} 
           </div>

@@ -7,6 +7,7 @@ import LogoImg from '../public/images/logo122.png'
 import {SearchIcon} from '@heroicons/react/solid';
 import { ToastContainer } from 'react-toastify'
 import Cookies from 'js-cookie'
+import Footer from '../components/Footer'
 import { Menu } from '@headlessui/react'
 import DropdownLink from '../components/DropdownLink'
 import 'react-toastify/dist/ReactToastify.css'
@@ -58,8 +59,8 @@ export default function Layout({title , children}) {
                         <Image src={LogoImg} className='h-[100px] hidden md:inline-block object-fill w-[300px]' />
                     </Link>
 
-                    <Link legacyBehavior href="/">
-                        <img src="/../public/images/logomob.png" className='h-[100px] md:hidden  object-fill w-[100px]' />
+                    <Link  href="/">
+                        <Image src={LogoImgMob} width="100" height="100" className=' md:hidden' />
                     </Link>
                     {/* <div className=' hidden  sm:flex items-center h-10 rounded-md flex-grow cursor-pointer  bg-yellow-400 hover:bg-yellow-500'>
                         <form>
@@ -78,49 +79,52 @@ export default function Layout({title , children}) {
                         </form>
                     </div>
                     <div className='flex z-30 items-center ' >
-                        <Link className='mx-3 shadow-sm rounded-md  shadow-gray-300 hover:shadow-gray-500 text-black' href='/Listing'>Products</Link>
-                        <Link className='mx-3 shadow-sm rounded-md hidden lg:inline-block shadow-gray-300 hover:shadow-gray-500 text-black' href='/#about'>Background</Link>
-                        <Link className='mx-3 shadow-sm rounded-md hidden lg:inline-block shadow-gray-300 hover:shadow-gray-500 text-black' href='/#vision'>Mission</Link>
+                        <Link className='mx-2 md:mx-3 shadow-sm rounded-md  shadow-gray-300 hover:shadow-gray-500 text-black' href='/Listing'>Products</Link>
+                        <Link className='mx-1 md:mx-3 shadow-sm rounded-md hidden lg:inline-block shadow-gray-300 hover:shadow-gray-500 text-black' href='/#about'>Background</Link>
+                        <Link className='mx-1 md:mx-3 shadow-sm rounded-md hidden lg:inline-block shadow-gray-300 hover:shadow-gray-500 text-black' href='/#vision'>Mission</Link>
                         <span className='hidden md:inline-block'>
                         <BsCart/>
                         </span>
                         
-                        <Link legacyBehavior href="/cart"><a className='mx-4 shadow-sm rounded-md  shadow-gray-300 hover:shadow-gray-500 text-black'>Cart{cartItemsCount>0 && (
+                        <Link legacyBehavior href="/cart"><a className=' mx-2 md:mx-4 shadow-sm rounded-md  shadow-gray-300 hover:shadow-gray-500 text-black'>Cart{cartItemsCount>0 && (
                             <span className='ml-1 rounded bg-[#5FD068] px-2 py-1 text-xs font-bold text-white'>{cartItemsCount}</span>
                         )}</a>
                         </Link>
                         {status ===  'loading' ? ('Loading') : 
                             session?.user ? ( 
-                                <Menu as="div" clasName="relative inline-block">
-                                    <Menu.Button className="text-yellow-400 pl-5">
+                                <Menu as="div" clasName="relative  inline-block">
+                                    <Menu.Button className="text-black shadow-md rounded-md ml-4">
                                         {session.user.name}
                                     </Menu.Button>
                                     <Menu.Items className='absolute bg-[#F6FBF4] right-0 w-56 origin-top-right shadow-lg'>
                                         <Menu.Item>
-                                        <DropdownLink className="dropdown-link " href="/profile">
+                                        <DropdownLink className="dropdown-link shadow rounded-lg hover:bg-gray-200 " href="/profile">
                                             Profile
                                         </DropdownLink>
                                         </Menu.Item>
                                         {session.user.isAdmin && (
                                             <Menu.Item>
-                                                <DropdownLink clasName="dropdown-link"
-                                                href="/admin/dashboard">Admin Dashboard</DropdownLink>
+                                                <DropdownLink clasName="dropdown-link shadow rounded-lg"
+                                                href="/admin/dashboard"> Admin Dashboard</DropdownLink>
                                             </Menu.Item>
                                         )}
                                         <Menu.Item>
-                                        <DropdownLink className="dropdown-link " href="/order-history">
+                                        <DropdownLink className="dropdown-link shadow rounded-lg " href="/order-history">
                                             Order History
                                         </DropdownLink>
                                         </Menu.Item>
                                         <Menu.Item>
-                                         <a className='dropdown-link' href='#' onClick={logoutClickHandler}>Logout</a>
+                                         <a className='dropdown-link shadow rounded-lg' href='#' onClick={logoutClickHandler}>Logout</a>
                                         </Menu.Item>
                                     </Menu.Items>
                                 </Menu>
                              )
                         : ( 
                             <span className='flex p-1 items-center'>
+                                <span className='hidden md:inline-block'>
                                 <BsPerson/>
+                                </span>
+                                
                                 <Link  legacyBehavior href='/login'>
                                 <a className='px-3 shadow-sm rounded-md  shadow-gray-300 hover:shadow-gray-500 text-black'>Login</a>
                             </Link>
@@ -135,8 +139,8 @@ export default function Layout({title , children}) {
             <main className='container m-auto mt-4 px-4  '>
                 {children}
             </main> 
-            <footer className='flex h-10 shadow-inner justify-center items-center '>
-                <p>Copyright 2022 SANCHAY</p>
+            <footer className='flex bg-gray-500 shadow-inner justify-center items-center '>
+                <Footer />
             </footer>
         </div>
     </>
