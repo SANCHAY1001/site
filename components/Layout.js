@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import {signOut, useSession} from 'next-auth/react'
 import React , {useContext , useEffect , useState} from 'react'
+import LogoImgMob from '../public/images/logomob.png'
 import LogoImg from '../public/images/logo122.png'
 import {SearchIcon} from '@heroicons/react/solid';
 import { ToastContainer } from 'react-toastify'
@@ -54,7 +55,11 @@ export default function Layout({title , children}) {
             <header>
                 <nav className='flex sm:flex-grow-0 bg-[#ebe9e9]  h-24 justify-between px-4 shadow-md shadow-gray-400 items-center py-2'>
                     <Link legacyBehavior href="/">
-                        <Image src={LogoImg} className='h-[100px] object-fill w-[300px]' />
+                        <Image src={LogoImg} className='h-[100px] hidden md:inline-block object-fill w-[300px]' />
+                    </Link>
+
+                    <Link legacyBehavior href="/">
+                        <img src="/../public/images/logomob.png" className='h-[100px] md:hidden  object-fill w-[100px]' />
                     </Link>
                     {/* <div className=' hidden  sm:flex items-center h-10 rounded-md flex-grow cursor-pointer  bg-yellow-400 hover:bg-yellow-500'>
                         <form>
@@ -74,9 +79,12 @@ export default function Layout({title , children}) {
                     </div>
                     <div className='flex z-30 items-center ' >
                         <Link className='mx-3 shadow-sm rounded-md  shadow-gray-300 hover:shadow-gray-500 text-black' href='/Listing'>Products</Link>
-                        <Link className='mx-3 shadow-sm rounded-md  shadow-gray-300 hover:shadow-gray-500 text-black' href='/#about'>Background</Link>
-                        <Link className='mx-3 shadow-sm rounded-md  shadow-gray-300 hover:shadow-gray-500 text-black' href='/#vision'>Mission</Link>
+                        <Link className='mx-3 shadow-sm rounded-md hidden lg:inline-block shadow-gray-300 hover:shadow-gray-500 text-black' href='/#about'>Background</Link>
+                        <Link className='mx-3 shadow-sm rounded-md hidden lg:inline-block shadow-gray-300 hover:shadow-gray-500 text-black' href='/#vision'>Mission</Link>
+                        <span className='hidden md:inline-block'>
                         <BsCart/>
+                        </span>
+                        
                         <Link legacyBehavior href="/cart"><a className='mx-4 shadow-sm rounded-md  shadow-gray-300 hover:shadow-gray-500 text-black'>Cart{cartItemsCount>0 && (
                             <span className='ml-1 rounded bg-[#5FD068] px-2 py-1 text-xs font-bold text-white'>{cartItemsCount}</span>
                         )}</a>
