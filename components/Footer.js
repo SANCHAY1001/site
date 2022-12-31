@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import LogoImage from '../public/images/logomob.png'
 export default function Footer() {
@@ -47,19 +48,19 @@ export default function Footer() {
                 </div>
                 <div class="sm:ml-0 ml-8 flex flex-col">
                     <h2 class="text-base font-semibold leading-4 text-gray-800 dark:text-white">Company</h2>
-                    <a href="/Listing" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Pricing</a>
-                    <a href="/#about" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">About Us</a>
-                    <a href="javascript:void(0)" class="focus:outline-none pb-5 focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Contact us</a>
+                    <Link href="/Listing" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Pricing</Link>
+                    <Link href="/#about" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">About Us</Link>
+                    <Link href="javascript:void(0)" class="focus:outline-none pb-5 focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Contact us</Link>
                     <p className='text-white'>452/1, Jheel Kurunja, Jheel
 Delhi-10051
 Mob: 9212180019, 9540998741</p>
                 </div>
                 <div class="flex flex-col">
                     <h2 class="text-base font-semibold leading-4 text-gray-800 dark:text-white">Support</h2>
-                    <a href="javascript:void(0)" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Legal policy</a>
-                    <a href="javascript:void(0)" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Status policy</a>
-                    <a href="javascript:void(0)" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Privacy policy</a>
-                    <a href="javascript:void(0)" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Terms of service</a>
+                    <Link href="javascript:void(0)" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Legal policy</Link>
+                    <Link href="javascript:void(0)" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Status policy</Link>
+                    <Link href="javascript:void(0)" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Privacy policy</Link>
+                    <Link href="javascript:void(0)" class="focus:outline-none focus:underline  text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Terms of service</Link>
                 </div>
             </div>
             
